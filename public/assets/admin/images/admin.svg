@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="100%" height="100%">
+  <defs>
+    <!-- Warna Biru Khas Voler -->
+    <style>
+      .voler-text {
+        font-family: 'Open Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        fill: #5A8DEE;
+      }
+      .square-1 { fill: #39DA8A; opacity: 0.8; }
+      .square-2 { fill: #00CFDD; opacity: 0.8; }
+      .square-3 { fill: #5A8DEE; opacity: 0.9; }
+    </style>
+  </defs>
+
+  <!-- Aksesori Kotak/Pixel ala Voler pada huruf 'A' -->
+  <g>
+    <!-- Teks Utama Admin -->
+    <text x="5" y="135" class="voler-text" font-size="140" letter-spacing="-2">Admin</text>
+    
+    <!-- Ornamen Persegi Bertumpuk Khas Logo Voler -->
+    <rect x="52" y="112" width="18" height="18" class="square-1" />
+    <rect x="52" y="94" width="18" height="18" class="square-2" />
+    <rect x="52" y="76" width="18" height="18" class="square-3" />
+  </g>
+</svg>
