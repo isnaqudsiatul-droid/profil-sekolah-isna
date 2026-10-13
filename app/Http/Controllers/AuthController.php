@@ -53,10 +53,15 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()
-            ->route('login')
+            ->route('public.beranda')
             ->with(
                 'success',
                 'Anda telah berhasil logout.'
             );
+    }
+
+    public function hitung() 
+    {
+        
     }
 }

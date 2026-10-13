@@ -54,8 +54,6 @@
 
 <div class="page-content">
     <div class="container-fluid p-0">
-        
-        <!-- Header Clean Simple -->
         <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
             <div>
                 <h2 class="font-weight-bold text-dark mb-1">

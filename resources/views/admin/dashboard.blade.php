@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('title', $title ?? 'Dashboard Admin')
 
 @section('content')
@@ -41,7 +40,7 @@
             <section class="section">
                 <div class="row g-4 mb-4">
                     
-                    @if (Auth::check() && strcasecmp(Auth::user()->role, 'admin') == 0)
+                    {{-- @if (Auth::check() && strcasecmp(Auth::user()->role, 'admin') == 0) --}}
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card-dash card-dash-stat h-100" style="background: #ffffff; border-radius: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.04); overflow: hidden; transition: all 0.25s ease-in-out;">
                             <div class="card-body p-4 position-relative">
@@ -63,7 +62,6 @@
                         </div>
                     </div>
 
-                    <!-- SISWA -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card-dash card-dash-stat h-100" style="background: #ffffff; border-radius: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.04); overflow: hidden; transition: all 0.25s ease-in-out;">
                             <div class="card-body p-4 position-relative">
@@ -84,9 +82,8 @@
                             </div>
                         </div>
                     </div>
-                    @endif
+                    {{-- @endif --}}
 
-                    <!-- BERITA -->
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card-dash card-dash-stat h-100" style="background: #ffffff; border-radius: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.04); overflow: hidden; transition: all 0.25s ease-in-out;">
                             <div class="card-body p-4 position-relative">
@@ -179,7 +176,6 @@
                 </div>
             </section>
 
-            <!-- Tabel Berita Terbaru -->
             <div class="row">
                 <div class="col-12">
                     <div class="card" style="background: #ffffff; border-radius: 1.25rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.04); overflow: hidden;">

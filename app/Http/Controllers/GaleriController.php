@@ -66,7 +66,7 @@ class GaleriController extends Controller
                 'kategori' => 'required|in:Foto,Video',
                 'tanggal' => 'required|date',
                 'keterangan' => 'nullable|string',
-                'file' => $fileRule . '|file|mimes:jpeg,png,jpg,mp4,mov|max:10240',
+                'file' => $fileRule . '|file|mimes:jpeg,png,jpg,mp4,mov|max:51200',
                 'link_video' => 'nullable|url',
                 'slug'      => 'required|unique:galeri,slug,' . ($decryptedId ?? 'NULL') . ',id_galeri'
             ],
@@ -77,7 +77,7 @@ class GaleriController extends Controller
                 'tanggal.required' => 'Tanggal wajib diisi.',
                 'file.required' => 'File foto atau video wajib diunggah.',
                 'file.mimes' => 'Format file yang didukung: JPG, PNG, MP4, atau MOV.',
-                'file.max' => 'Ukuran file maksimal 10MB.',
+                'file.max' => 'Ukuran file maksimal 50MB.',
                 'link_video.url' => 'Format URL link YouTube tidak valid.',
                 'slug.unique' => 'Slug galeri sudah digunakan. Silahkan gunakan judul yang berbeda.'
             ]

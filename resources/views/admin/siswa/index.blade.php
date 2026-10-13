@@ -51,11 +51,8 @@
                     <i data-feather="plus" width="16" class="mr-1.5"></i> Tambah Siswa
                 </a>
             </div>
-            <!-- Main Card Container -->
             <div class="card p-4 mb-4"
                 style="background: #ffffff; border-radius: 1rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.03);">
-
-                <!-- Table Responsive -->
                 <div class="table-responsive">
                     <table class="table align-middle mb-0">
                         <thead class="bg-light">
@@ -102,23 +99,18 @@
                                             <td class="pr-4 text-center"
                                                 style="padding: 1rem 1.25rem; color: #1e293b; border-bottom: 1px solid #f1f5f9; font-size: 0.875rem;">
                                                 <div class="d-flex justify-content-center align-items-center">
-                                                    {{-- Tombol Detail --}}
                                                     <a href="{{ route('admin.siswa.show', Crypt::encrypt($item->id_siswa)) }}"
                                                         class="btn-action-squircle view" title="Detail"
                                                         style="width: 38px; height: 38px; border-radius: 12px; background-color: #b0bec5; display: inline-flex; align-items: center; justify-content: center; border: none; outline: none; padding: 0; margin: 0 2px; transition: all 0.2s ease-in-out; cursor: pointer;">
                                                         <i data-feather="eye" width="18" height="18"
                                                             stroke-width="2"></i>
                                                     </a>
-
-                                                    {{-- Tombol Edit --}}
                                                     <a href="{{ route('admin.siswa.addEdit', Crypt::encrypt($item->id_siswa)) }}"
                                                         class="btn-action-squircle edit" title="Edit"
                                                         style="width: 38px; height: 38px; border-radius: 12px; background-color: #b0bec5; display: inline-flex; align-items: center; justify-content: center; border: none; outline: none; padding: 0; margin: 0 2px; transition: all 0.2s ease-in-out; cursor: pointer;">
                                                         <i data-feather="edit-2" width="18" height="18"
                                                             stroke-width="2"></i>
                                                     </a>
-
-                                                    {{-- Tombol Hapus --}}
                                                     <form action="{{ route('admin.siswa.destroy', $item->id_siswa) }}"
                                                         method="POST" class="d-inline"
                                                         onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">

@@ -62,8 +62,6 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100 overflow-x-hidden bg-light">
-
-    <!-- NAVBAR UTAMA -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-white"
@@ -126,6 +124,18 @@
                             Galeri
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2 {{ request()->routeIs('login.*') ? 'active text-warning fw-bold' : 'text-white' }}"
+                            href="{{ route('login') }}">
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 py-2 {{ request()->routeIs('public.ujikom')  ? 'active text-warning fw-bold' : 'text-white' }}"
+                            href="{{ route('public.ujikom') }}">
+                            Ujikom
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -170,13 +180,14 @@
                                 <li><a href="{{ url('/#beranda-profil') }}" class="nav-link small">Beranda</a></li>
                                 <li><a href="{{ url('/#beranda-profil') }}" class="nav-link small">Profil Sekolah</a></li>
                                 <li><a href="{{ url('/#guru') }}" class="nav-link small">Guru & Staf</a></li>
+                                <li><a href="{{ url('/#berita') }}" class="nav-link small">Berita</a></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="list-unstyled mb-0">
-                                <li><a href="{{ url('/#berita') }}" class="nav-link small">Berita</a></li>
                                 <li><a href="{{ url('/#ekskul') }}" class="nav-link small">Ekstrakurikuler</a></li>
                                 <li><a href="{{ url('/#galeri') }}" class="nav-link small">Galeri</a></li>
+                                <li><a href="{{ route('login') }}" class="nav-link small">Login</a></li>
                             </ul>
                         </div>
                     </div>

@@ -2,7 +2,6 @@
 @section('title', 'Beranda - MTs Bahrul Hidayah')
 @section('content')
     <style>
-        /* Agar animasi scroll terasa halus */
         html {
             scroll-behavior: smooth;
         }
@@ -84,7 +83,6 @@
         }
     </style>
 
-    <!-- HERO SECTION -->
     <div id="beranda-profil"
         class="container-fluid py-5 my-n4 text-white position-relative d-flex align-items-center hero-section">
         <div class="container py-4 w-100">
@@ -96,8 +94,8 @@
 
                     <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold d-inline-block"
                         style="font-size: 0.85rem;">
-                        NPSN: {{ $profilSekolah->npsn ?? '20261945' }} | Berdiri Sejak
-                        {{ $profilSekolah->tahun_berdiri ?? '1978' }}
+                        NPSN: {{ $profilSekolah->npsn ?? '20261945' }} | 
+                        Berdiri Sejak {{ $profilSekolah->tahun_berdiri ?? '1978' }}
                     </span>
                     <h2 class="fw-bold mb-3 display-6 display-md-5">
                         {{ $profilSekolah->nama_sekolah ?? 'MTs Bahrul Hidayah' }}
@@ -122,7 +120,6 @@
         </div>
     </div>
 
-    <!-- KOTAK STATISTIK DINAMIS -->
     <div class="container position-relative px-3 px-md-0" style="margin-top: -40px; z-index: 10;" data-aos="fade-up"
         data-aos-delay="150">
         <div class="row g-0 stats-container text-center">
@@ -179,17 +176,10 @@
                 <p class="text-secondary small text-md-normal">Kami berkomitmen untuk terus mencetak generasi yang cerdas,
                     religius, berkarakter luhur, serta mampu bersaing di era digital melalui pembelajaran yang berkualitas.
                 </p>
-                <div class="mt-4">
-                    <a href="{{ route('public.profil') }}"
-                        class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-semibold w-100 w-md-auto text-center">
-                        <i class="fa-solid fa-arrow-right me-2"></i> Lihat Selengkapnya Profil Sekolah
-                    </a>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- BERITA TERBARU -->
     <div id="berita" class="biru py-5 mt-4" data-aos="fade-up" data-aos-delay="100"
         style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
         <div class="container px-4 px-md-3">
@@ -247,7 +237,6 @@
         </div>
     </div>
 
-    <!-- EKSTRAKURIKULER -->
     <div id="ekskul" class="py-5 my-4" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
             <div class="row mb-4">
@@ -304,7 +293,6 @@
         </div>
     </div>
 
-    <!-- GURU & STAF -->
     <div id="guru" class="biru py-5" data-aos="fade-up" data-aos-delay="100"
         style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
         <div class="container px-4 px-md-3">
@@ -360,7 +348,6 @@
         </div>
     </div>
 
-    <!-- GALERI -->
     <div id="galeri" class="py-5 my-4" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
             <div class="row mb-4">
