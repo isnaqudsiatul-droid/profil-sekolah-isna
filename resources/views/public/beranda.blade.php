@@ -12,7 +12,6 @@
             background-size: cover;
             width: 100vw;
             height: 100vh;
-            /* position: relative; */
             left: 50%;
             right: 50%;
             margin-left: -50vw;
@@ -23,9 +22,8 @@
 
         .stats-container {
             background: linear-gradient(135deg, #123F66 0%, #1f5f94 100%);
-            border-radius: 1rem;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
         }
 
         .stats-item {
@@ -54,12 +52,12 @@
         <div class="container py-4 w-100">
             <div class="row">
                 <div class="col-lg-8 col-md-10" data-aos="fade-up" data-aos-delay="100">
-                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 13px;">
                         <i class="fa-solid fa-school me-1"></i> WEBSITE RESMI SEKOLAH
                     </span>
 
                     <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold d-inline-block"
-                        style="font-size: 0.85rem;">
+                        style="font-size: 13px;">
                         NPSN: {{ $profilSekolah->npsn ?? '20261945' }} | 
                         Berdiri Sejak {{ $profilSekolah->tahun_berdiri ?? '1978' }}
                     </span>
@@ -180,7 +178,7 @@
                                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                                     <div>
                                         <h5 class="card-title font-weight-bold mb-2 text-dark fs-5"
-                                            style="font-size: 1.1rem;">
+                                            style="font-size: 16px;">
                                             {{ $item->judul }}</h5>
                                         <p class="card-text small mb-3 text-muted">
                                             {{ Str::limit(strip_tags($item->isi), 80) }}</p>
@@ -290,7 +288,7 @@
                                     @endif
                                 </div>
                                 <div class="card-body py-3 text-center">
-                                    <h5 class="card-title fw-bold mb-1 text-dark" style="font-size: 1rem;">
+                                    <h5 class="card-title fw-bold mb-1 text-dark" style="font-size: 16px;">
                                         {{ $item->nama ?? $item->nama_guru }}
                                     </h5>
                                     <p class="card-text mb-0 text-muted small">
@@ -351,7 +349,7 @@
                                     @endif
                                 </div>
                                 <div class="card-body p-4 d-flex flex-column justify-content-between">
-                                    <h5 class="card-title font-weight-bold m-0 mb-3 text-dark" style="font-size: 1rem;">
+                                    <h5 class="card-title font-weight-bold m-0 mb-3 text-dark" style="font-size: 16px;">
                                         {{ $item->judul }}
                                     </h5>
                                     <a href="{{ route('public.galeri.show', $item->slug) }}"
