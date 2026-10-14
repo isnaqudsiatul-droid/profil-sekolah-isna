@@ -141,9 +141,11 @@ class EktrakurikulerController extends Controller
 
     public function ekskulPublic()
     {
+        $title = 'Data Ekstrakurikuler';
+
         $ekskul = Ektrakurikuler::all();
 
-        return view('public.ekskul.index', compact('ekskul'));
+        return view('public.ekskul.index', compact('ekskul', 'title'));
     }
 
     public function showPublic($slug)

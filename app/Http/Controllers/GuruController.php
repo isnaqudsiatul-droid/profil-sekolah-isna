@@ -121,9 +121,11 @@ class GuruController extends Controller
 
     public function guruPublic()
     {
+        $title = 'Data Guru';
+
         $guru = Guru::all();
 
-        return view('public.guru.index', compact('guru'));
+        return view('public.guru.index', compact('guru', 'title'));
     }
 
     public function showPublic($slug)
@@ -138,6 +140,6 @@ class GuruController extends Controller
                 ->with('error', 'Data guru tidak ditemukan.');
         }
 
-        return view('public.guru.show', compact('guru', 'title', 'profil'));
+        return view('public.guru.show', compact('guru', 'title'));
     }
 }

@@ -4,11 +4,11 @@
 
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-8px);
         }
     </style>
 

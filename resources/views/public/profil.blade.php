@@ -4,35 +4,21 @@
 
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-            border-radius: 25px;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.05);
         }
     </style>
 
     <div class="container-fluid biru-header text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 13px;">
                 <i class="fa-solid fa-school me-1"></i> INFORMASI RESMI MADRASAH
             </span>
             <h1 class="fw-bold display-5 display-md-4 mb-2">Profil Madrasah</h1>
-            <p class="lead fs-6 fs-md-5 mb-0">Mengenal lebih dekat sejarah, visi, misi, dan informasi MTs Bahrul Hidayah</p>
+            <p class="fs-6 fs-md-5 mb-0">Mengenal lebih dekat sejarah, visi, misi, dan informasi MTs Bahrul Hidayah</p>
         </div>
     </div>
 
@@ -41,7 +27,7 @@
             
             <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-card">
-                    <div class="img-zoom-container" style="height: 380px;">
+                    <div style="height: 380px;">
                         @if($profil && $profil->foto)
                             <img src="{{ asset('storage/' . $profil->foto) }}" alt="Foto Sekolah" class="w-100 h-100" style="object-fit: cover;">
                         @else
@@ -89,11 +75,11 @@
         <div class="row mt-5 pt-4 border-top gy-4" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-4">
                 <div class="card p-4 shadow-sm border-0 bg-white rounded-4 text-center h-100 hover-card">
-                    <div class="img-zoom-container mx-auto mb-3" style="width: 160px; height: 160px; border-radius: 50%;">
+                    <div class="mx-auto mb-3" style="width: 160px; height: 160px;">
                         @if($profil && $profil->foto_kepala_sekolah)
-                            <img src="{{ asset('storage/' . $profil->foto_kepala_sekolah) }}" alt="Kepala Sekolah" class="w-100 h-100" style="object-fit: cover;">
+                            <img src="{{ asset('storage/' . $profil->foto_kepala_sekolah) }}" alt="Kepala Sekolah" class="w-100 h-100 rounded-pill" style="object-fit: cover;">
                         @else
-                            <img src="{{ asset('assets/admin/images/default-user.jpg') }}" alt="Default Kepsek" class="w-100 h-100" style="object-fit: cover;">
+                            <img src="{{ asset('assets/admin/images/default-user.jpg') }}" alt="Default Kepsek" class="w-100 h-100 rounded-pill" style="object-fit: cover;">
                         @endif
                     </div>
                     <h5 class="fw-bold mb-1 text-dark">{{ $profil->nama_kepala_sekolah ?? 'Nama Kepala Sekolah' }}</h5>

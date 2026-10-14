@@ -165,9 +165,11 @@ class GaleriController extends Controller
 
     public function galeriPublic()
     {
+        $title = 'Data Galeri';
+
         $galeri = Galeri::latest('tanggal')->get();
 
-        return view('public.galeri.index', compact('galeri'));
+        return view('public.galeri.index', compact('galeri', 'title'));
     }
 
     public function showPublic($slug)

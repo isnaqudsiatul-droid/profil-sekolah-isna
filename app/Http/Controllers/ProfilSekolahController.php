@@ -103,8 +103,9 @@ class ProfilSekolahController extends Controller
 
     public function profilPublic()
     {
+        $title = 'Profil Sekolah';
         $profil = ProfilSekolah::first();
 
-        return view('public.profil', compact('profil'));
+        return view('public.profil', compact('profil', 'title'));
     }
 }

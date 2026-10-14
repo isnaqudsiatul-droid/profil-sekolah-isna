@@ -4,29 +4,15 @@
 
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.08);
         }
     </style>
 
-    <!-- HEADER / BANNER BERITA -->
-    <div class="container-fluid biru-header text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
+    <div class="container-fluid text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
             <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
                 <i class="fa-solid fa-newspaper me-1"></i> INFORMASI & KEGIATAN
@@ -36,7 +22,6 @@
         </div>
     </div>
 
-    <!-- KONTEN DAFTAR BERITA -->
     <div class="container pb-5" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
             @if(isset($berita) && count($berita) > 0)
@@ -44,7 +29,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card bg-white border-0 h-100 shadow rounded-4 overflow-hidden hover-card d-flex flex-column justify-content-between">
                             <div>
-                                <div class="img-zoom-container" style="position: relative; height: 200px; background: #0f172a;">
+                                <div style="position: relative; height: 200px; background: #0f172a;">
                                     @if (!empty($item->gambar))
                                         <img src="{{ asset('storage/' . $item->gambar) }}" alt="Foto {{ $item->judul }}"
                                             style="width: 100%; height: 100%; object-fit: cover;">
@@ -82,5 +67,4 @@
             @endif
         </div>
     </div>
-
 @endsection

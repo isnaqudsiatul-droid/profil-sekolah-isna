@@ -8,7 +8,7 @@
         }
 
         .hover-card:hover {
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-8px);
         }
 
         .info-card-item {
@@ -16,19 +16,18 @@
             border: 1px solid #f1f5f9;
             border-radius: 16px;
             padding: 16px;
-            transition: all 0.2s ease;
+            transition: 0.2s;
         }
 
         .info-card-item:hover {
             border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            background-color: #ffffff;  
         }
     </style>
 
     <div class="container-fluid py-5 mt-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container py-3">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-2 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="badge bg-warning text-dark px-3 py-2 mb-2 rounded-pill fw-bold" style="font-size: 14px;">
                 <i class="fa-solid fa-chart-line me-1"></i> PENGEMBANGAN DIRI
             </span>
         </div>
@@ -38,7 +37,7 @@
         <div class="mb-4">
             <a href="javascript:history.back()"
                 class="btn rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center shadow-sm"
-                style="background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; text-decoration: none !important;">
+                style="color: #475569; border: 1px solid #e2e8f0; text-decoration: none !important;">
                 <i class="fa-solid fa-arrow-left me-2"></i> Kembali
             </a>
         </div>
@@ -63,7 +62,6 @@
                         </div>
                     </div>
 
-                    <!-- Kolom Informasi Detail -->
                     <div class="col-lg-8">
                         <div class="mb-4">
                             <h2 class="fw-bold text-dark mb-2 fs-3 fs-md-2">{{ $ekstrakurikuler->nama_ekskul }}</h2>
@@ -75,9 +73,9 @@
                                     <div class="d-flex align-items-center gap-2 mb-1">
                                         <i class="fa-solid fa-user text-primary"></i>
                                         <span class="text-muted small fw-bold text-uppercase"
-                                            style="font-size: 0.725rem;">Pembina / Pendamping</span>
+                                            style="font-size: 12px;">Pembina / Pendamping</span>
                                     </div>
-                                    <div class="fw-semibold text-dark" style="font-size: 0.95rem;">
+                                    <div class="fw-semibold text-dark" style="font-size: 14px;">
                                         {{ $ekstrakurikuler->guru->nama ?? ($ekstrakurikuler->guru->nama_guru ?? '-') }}
                                     </div>
                                 </div>
@@ -87,9 +85,9 @@
                                     <div class="d-flex align-items-center gap-2 mb-1">
                                         <i class="fa-regular fa-calendar-days text-primary"></i>
                                         <span class="text-muted small fw-bold text-uppercase"
-                                            style="font-size: 0.725rem;">Jadwal Latihan</span>
+                                            style="font-size: 12px;">Jadwal Latihan</span>
                                     </div>
-                                    <div class="fw-semibold text-dark" style="font-size: 0.95rem;">
+                                    <div class="fw-semibold text-dark" style="font-size: 14px;">
                                         {{ $ekstrakurikuler->jadwal_latihan ?? '-' }}
                                     </div>
                                 </div>
@@ -99,11 +97,11 @@
                         <div class="info-card-item">
                             <div class="d-flex align-items-center gap-2 mb-2">
                                 <i class="fa-solid fa-file-lines text-primary"></i>
-                                <span class="text-muted small fw-bold text-uppercase" style="font-size: 0.725rem;">Deskripsi
+                                <span class="text-muted small fw-bold text-uppercase" style="font-size: 12px;">Deskripsi
                                     Kegiatan</span>
                             </div>
                             <div class="text-secondary small"
-                                style="line-height: 1.7; font-size: 0.9rem; text-align: justify;">
+                                style="line-height: 1.7; font-size: 14px; text-align: justify;">
                                 {!! nl2br(e($ekstrakurikuler->deskripsi)) ?? '<span class="text-muted">Tidak ada deskripsi.</span>' !!}
                             </div>
                         </div>

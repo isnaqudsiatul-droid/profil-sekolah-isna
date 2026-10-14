@@ -3,41 +3,25 @@
 @section('content')
 
     <style>
-        /*Efek Hover & Transisi Kartu Modern */
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.08);
         }
     </style>
 
-    <!-- HEADER / BANNER DAFTAR GURU -->
-    <div class="container-fluid biru-header text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
+    <div class="container-fluid text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 13px;">
                 <i class="fa-solid fa-chalkboard-user me-1"></i> TENAGA PENDIDIK
             </span>
             <h1 class="fw-bold display-5 display-md-4 mb-2">Dewan Guru & Staf</h1>
-            <p class="lead fs-6 fs-md-5 mb-0">Tenaga pendidik profesional dan berdedikasi tinggi di MTs Bahrul Hidayah</p>
+            <p class="fs-6 fs-md-5 mb-0">Tenaga pendidik profesional dan berdedikasi tinggi di MTs Bahrul Hidayah</p>
         </div>
     </div>
 
-    <!-- KONTEN DAFTAR GURU -->
     <div class="container pb-5" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
             @if(isset($guru) && count($guru) > 0)
@@ -45,7 +29,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                         <div class="card border-0 shadow-sm h-100 text-center overflow-hidden rounded-4 bg-white hover-card d-flex flex-column justify-content-between">
                             <div>
-                                <div class="w-100 img-zoom-container" style="height: 280px;">
+                                <div class="w-100" style="height: 280px;">
                                     @if ($item->foto)
                                         <img src="{{ asset('storage/' . $item->foto) }}"
                                             alt="Foto {{ $item->nama ?? $item->nama_guru }}" class="w-100 h-100"

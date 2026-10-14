@@ -4,39 +4,24 @@
 
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.08);
         }
     </style>
 
-    <!-- HEADER / BANNER EKSTRAKURIKULER -->
-    <div class="container-fluid biru-header text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
+    <div class="container-fluid text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 13px;">
                 <i class="fa-solid fa-chart-line me-1"></i> PENGEMBANGAN DIRI
             </span>
             <h1 class="fw-bold display-5 display-md-4 mb-2">Ekstrakurikuler</h1>
-            <p class="lead fs-6 fs-md-5 mb-0">Data Ekstrakurikuler dan kegiatan siswa di MTs Bahrul Hidayah</p>
+            <p class="fs-6 fs-md-5 mb-0">Data Ekstrakurikuler dan kegiatan siswa di MTs Bahrul Hidayah</p>
         </div>
     </div>
 
-    <!-- KONTEN DAFTAR EKSTRAKURIKULER -->
     <div class="container pb-5" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
             @if(isset($ekskul) && count($ekskul) > 0)
@@ -44,7 +29,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card border-0 h-100 shadow rounded-4 overflow-hidden hover-card d-flex flex-column justify-content-between">
                             <div>
-                                <div class="img-zoom-container" style="position: relative; height: 200px;">
+                                <div style="position: relative; height: 200px;">
                                     @if (!empty($item->gambar))
                                         <img src="{{ asset('storage/' . $item->gambar) }}"
                                             alt="Foto {{ $item->nama_ekskul }}"
@@ -82,5 +67,4 @@
             @endif
         </div>
     </div>
-
 @endsection

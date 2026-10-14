@@ -4,35 +4,21 @@
 
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img, 
-        .img-zoom-container video {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.08);
         }
     </style>
 
-    <div class="container-fluid biru-header text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
+    <div class="container-fluid text-center py-5 my-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold" style="font-size: 14px;">
                 <i class="fa-solid fa-images me-1"></i> DOKUMENTASI MADRASAH
             </span>
             <h1 class="fw-bold display-5 display-md-4 mb-2">Galeri Kegiatan</h1>
-            <p class="lead fs-6 fs-md-5 mb-0">Dokumentasi foto dan galeri kegiatan di MTs Bahrul Hidayah</p>
+            <p class="fs-6 fs-md-5 mb-0">Dokumentasi foto dan galeri kegiatan di MTs Bahrul Hidayah</p>
         </div>
     </div>
 
@@ -43,17 +29,14 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card border-0 h-100 shadow rounded-4 overflow-hidden hover-card d-flex flex-column justify-content-between">
                             <div>
-                                <div class="img-zoom-container bg-dark" style="position: relative; height: 200px;">
+                                <div class="bg-dark" style="position: relative; height: 200px;">
                                     @if (!empty($item->link_video))
-                                        <!-- Tampilkan Video YouTube Embed -->
                                         <iframe src="{{ $item->link_video }}" class="w-100 h-100 border-0" allowfullscreen></iframe>
                                     @elseif (!empty($item->file) && (str_ends_with($item->file, '.mp4') || str_ends_with($item->file, '.mov')))
-                                        <!-- Tampilkan File Video Lokal -->
                                         <video class="w-100 h-100" style="object-fit: cover;" controls>
                                             <source src="{{ asset('storage/' . $item->file) }}" type="video/mp4">
                                         </video>
                                     @elseif (!empty($item->file) && file_exists(public_path('storage/' . $item->file)))
-                                        <!-- Tampilkan Foto -->
                                         <img src="{{ asset('storage/' . $item->file) }}" alt="Foto {{ $item->judul }}"
                                             style="width: 100%; height: 100%; object-fit: cover;">
                                     @else
@@ -65,7 +48,7 @@
                                     @endif
                                 </div>
                                 <div class="card-body p-4">
-                                    <h5 class="card-title font-weight-bold m-0 fs-5" style="font-size: 1rem;">
+                                    <h5 class="card-title font-weight-bold m-0 fs-5" style="font-size: 14px;">
                                         {{ $item->judul }}
                                     </h5>
                                 </div>

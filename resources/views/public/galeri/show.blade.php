@@ -4,37 +4,17 @@
 @section('content')
     <style>
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .table-detail-info th {
-            color: #64748b;
-            font-weight: 600;
-            font-size: 0.875rem;
-            padding: 0.85rem 0;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .table-detail-info td {
-            color: #1e293b;
-            font-size: 0.875rem;
-            padding: 0.85rem 0;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .table-detail-info tr:last-child th,
-        .table-detail-info tr:last-child td {
-            border-bottom: none;
+            transform: translateY(-8px);
         }
     </style>
 
     <div class="container-fluid py-5 mt-3" data-aos="fade-down" data-aos-delay="100">
         <div class="container py-3">
-            <span class="badge bg-warning text-dark px-3 py-2 mb-2 rounded-pill fw-bold" style="font-size: 0.85rem;">
+            <span class="badge bg-warning text-dark px-3 py-2 mb-2 rounded-pill fw-bold" style="font-size: 14px;">
                 <i class="fa-solid fa-images me-1"></i> DOKUMENTASI KEGIATAN
             </span>
         </div>

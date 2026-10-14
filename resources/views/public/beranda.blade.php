@@ -2,10 +2,6 @@
 @section('title', 'Beranda - MTs Bahrul Hidayah')
 @section('content')
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         .biru {
             background-color: #123F66;
         }
@@ -16,20 +12,14 @@
             background-size: cover;
             width: 100vw;
             height: 100vh;
-            position: relative;
+            /* position: relative; */
             left: 50%;
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
         }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                height: auto !important;
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-        }
+        
 
         .stats-container {
             background: linear-gradient(135deg, #123F66 0%, #1f5f94 100%);
@@ -45,41 +35,17 @@
             transition: all 0.3s ease;
         }
 
-        @media (min-width: 768px) {
-            .stats-item:not(:last-child) {
-                clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
-            }
-
-            .stats-item:not(:first-child) {
-                clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
-                margin-left: -5px;
-            }
-        }
-
         .stats-item:hover {
             background-color: rgba(255, 255, 255, 0.08);
             transform: translateY(-3px);
-        }
+        }   
 
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s
         }
 
         .hover-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
-        }
-
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-card:hover .img-zoom-container img {
-            transform: scale(1.08);
         }
     </style>
 
@@ -100,7 +66,7 @@
                     <h2 class="fw-bold mb-3 display-6 display-md-5">
                         {{ $profilSekolah->nama_sekolah ?? 'MTs Bahrul Hidayah' }}
                     </h2>
-                    <p class="lead mb-4 fs-6 fs-md-5">
+                    <p class="mb-4 fs-6 fs-md-5">
                         <i class="fa-solid fa-location-dot me-2"></i>
                         {{ $profilSekolah->alamat ?? 'Jl. Pendidikan Vokasi No. 45' }}
                     </p>
@@ -149,16 +115,15 @@
     <div class="container py-5 my-4">
         <div class="row align-items-center gy-4">
             <div class="col-lg-5 col-md-6 text-center" data-aos="fade-right" data-aos-delay="100">
-                <div class="position-relative d-inline-block shadow-lg rounded-4 overflow-hidden w-100 hover-card">
+                <div class=" d-inline-block shadow-lg rounded-4 overflow-hidden w-100 hover-card">
                     @if ($profilSekolah && !empty($profilSekolah->foto_kepala_sekolah))
                         <img src="{{ asset('storage/' . $profilSekolah->foto_kepala_sekolah) }}" alt="Foto Kepala Sekolah"
-                            class="w-100 img-fluid img-zoom-container" style="height: 400px; object-fit: cover;">
+                            class="w-100 img-fluid" style="height: 400px; object-fit: cover;">
                     @else
                         <img src="{{ asset('assets/admin/images/default-user.jpg') }}" alt="Default Kepsek"
-                            class="w-100 img-fluid img-zoom-container" style="height: 400px; object-fit: cover;">
+                            class="w-100 img-fluid" style="height: 400px; object-fit: cover;">
                     @endif
-                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
-                        style="background: linear-gradient(to top, rgba(18, 63, 102, 0.9), transparent);">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white">
                         <h5 class="fw-bold mb-0 fs-6 fs-md-5">
                             {{ $profilSekolah->nama_kepala_sekolah ?? 'Kepala Madrasah' }}</h5>
                         <small class="text-warning">Kepala MTs Bahrul Hidayah</small>
@@ -199,7 +164,7 @@
                     @foreach ($berita as $item)
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card border-0 h-100 shadow rounded-4 overflow-hidden bg-white hover-card">
-                                <div class="img-zoom-container"
+                                <div
                                     style="position: relative; height: 200px; background: #0f172a;">
                                     @if (!empty($item->gambar))
                                         <img src="{{ asset('storage/' . $item->gambar) }}" alt="Foto {{ $item->judul }}"
@@ -255,7 +220,7 @@
                     @foreach ($ekskul as $item)
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card border-0 h-100 shadow-sm rounded-4 overflow-hidden border hover-card">
-                                <div class="img-zoom-container" style="position: relative; height: 200px;">
+                                <div style="position: relative; height: 200px;">
                                     @if (!empty($item->gambar))
                                         <img src="{{ asset('storage/' . $item->gambar) }}"
                                             alt="Foto {{ $item->nama_ekskul }}"
@@ -312,7 +277,7 @@
                     @foreach ($guru as $item)
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card border-0 shadow-sm h-100 overflow-hidden rounded-4 bg-white hover-card">
-                                <div class="w-100 img-zoom-container" style="height: 250px;">
+                                <div class="w-100" style="height: 250px;">
                                     @if ($item->foto)
                                         <img src="{{ asset('storage/' . $item->foto) }}"
                                             alt="Foto {{ $item->nama ?? $item->nama_guru }}" class="w-100 h-100"
@@ -366,7 +331,7 @@
                     @foreach ($galeri as $item)
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card border-0 h-100 shadow-sm rounded-4 overflow-hidden border hover-card">
-                                <div class="img-zoom-container bg-dark" style="position: relative; height: 200px;">
+                                <div class="bg-dark" style="position: relative; height: 200px;">
                                     @if (!empty($item->link_video))
                                         <iframe src="{{ $item->link_video }}" class="w-100 h-100 border-0"
                                             allowfullscreen></iframe>

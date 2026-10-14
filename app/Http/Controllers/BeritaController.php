@@ -185,12 +185,14 @@ class BeritaController extends Controller
 
     public function beritaPublic()
     {
+        $title = 'Data Berita';
+
         $berita = Berita::with('user')
             ->where('status', 'public')
             ->latest('tanggal')
             ->get();
 
-        return view('public.berita.index', compact('berita'));
+        return view('public.berita.index', compact('berita', 'title'));
     }
 
     public function showPublic($slug)

@@ -5,22 +5,20 @@
 @section('content')
     <style>
         .info-tile {
-            transition: all 0.3s ease-in-out;
+            transition: 0.3s;
         }
 
         .info-tile:hover {
             background: #ffffff !important;
-            border-color: #cbd5e1 !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transform: translateY(-3px);
         }
 
         .hover-card {
-            transition: all 0.35s ease-in-out;
+            transition: 0.3s;
         }
 
         .hover-card:hover {
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-8px);
         }
     </style>
 
@@ -40,12 +38,9 @@
             <i class="fa-solid fa-arrow-left me-2"></i> Kembali
         </a>
 
-        <!-- SATU CARD UTAMA -->
         <div class="card border-0 rounded-4 shadow-sm bg-white hover-card overflow-hidden">
             <div class="card-body p-4 p-md-5">
                 <div class="row g-4 align-items-center">
-                    
-                    <!-- Kolom Kiri: Foto & Nama Singkat -->
                     <div class="col-lg-4 text-center border-end-lg pe-lg-4">
                         <div class="p-4 bg-light rounded-4 border shadow-sm d-inline-block w-100">
                             <div class="mb-3">
@@ -65,7 +60,6 @@
                         </div>
                     </div>
 
-                    <!-- Kolom Kanan: Rincian Informasi Detail -->
                     <div class="col-lg-8" data-aos="fade-left" data-aos-delay="150">
                         <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
                             <h5 class="fw-bold text-dark mb-0 d-flex align-items-center">
@@ -74,7 +68,6 @@
                         </div>
 
                         <div class="row g-3">
-                            <!-- Box 1: Nama Lengkap -->
                             <div class="col-md-6">
                                 <div class="info-tile bg-light border rounded-4 p-3 h-100">
                                     <div class="rounded-3 bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center mb-3"
@@ -87,7 +80,6 @@
                                 </div>
                             </div>
 
-                            <!-- Box 2: NIP -->
                             <div class="col-md-6">
                                 <div class="info-tile bg-light border rounded-4 p-3 h-100">
                                     <div class="rounded-3 bg-secondary bg-opacity-10 text-secondary d-flex align-items-center justify-content-center mb-3"
@@ -100,7 +92,6 @@
                                 </div>
                             </div>
 
-                            <!-- Box 3: Mata Pelajaran -->
                             <div class="col-md-6">
                                 <div class="info-tile bg-light border rounded-4 p-3 h-100">
                                     <div class="rounded-3 bg-info bg-opacity-10 text-info d-flex align-items-center justify-content-center mb-3"
@@ -113,7 +104,6 @@
                                 </div>
                             </div>
 
-                            <!-- Box 4: Ekstrakurikuler -->
                             <div class="col-md-6">
                                 <div class="info-tile bg-light border rounded-4 p-3 h-100">
                                     <div class="rounded-3 bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center mb-3"
@@ -141,6 +131,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

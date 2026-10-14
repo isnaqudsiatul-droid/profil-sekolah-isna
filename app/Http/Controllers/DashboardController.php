@@ -7,7 +7,6 @@ use App\Models\Berita;
 use App\Models\Ektrakurikuler;
 use App\Models\Galeri;
 use App\Models\Guru;
-// use App\Models\ProfilSekolah;
 use App\Models\Siswa;
 use App\Models\User;
 
@@ -39,6 +38,8 @@ class DashboardController extends Controller
 
     public function landing()
     {
+        $title = 'Beranda';
+
         $berita = Berita::with('user')
             ->where('status', 'public')
             ->latest('tanggal')
@@ -64,7 +65,8 @@ class DashboardController extends Controller
             'totalGuru',
             'totalEkskul',
             'totalBerita',
-            'totalGaleri'
+            'totalGaleri',
+            'title'
         ));
     }
 }
